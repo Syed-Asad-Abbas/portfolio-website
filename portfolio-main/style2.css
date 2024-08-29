@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --light: #eaecee;
+    --color-text: #3c3e41;
+    --box-shadow: 
+        5px 5px 15px #c1c8d3, 
+        -5px -5px 15px #ffffff;
+    --gradient-bg: linear-gradient(-45deg, #D000F7, #24BAE3);
+}
+body {
+    margin: 0;
+    background-color: var(--light);
+    color: var(--color-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #dce1e4;
+    background-color: var(--light);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo img {
+    height: 50px;
+}
+header nav {
+    display: flex;
+    flex-wrap: wrap; /* Allow nav items to wrap */
+    gap: 10px; /* Space between nav items */
+    justify-content: center; /* Center nav items horizontally */
+    width: 100%; /* Make sure nav takes full width */
+}
+header nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    padding: 10px;
+    display: block; /* Make links block-level for better padding */
+    text-align: center; /* Center text inside links */
+}
+.container {
+    width: 1200px;
+    max-width: 90%;
+    margin: 100px auto;
+    padding: 20px;
+}
+.title {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 2em;
+    font-weight: 600;
+}
+.project-detail {
+    margin-top: 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items horizontally */
+    
+}
+.project-detail img,
+.container img {
+    width: 100%;
+    max-width: 800px; /* Set max-width to control image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 10px 0; /* Add spacing around images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for zoom effect */
+
+}
+.project-detail img:hover,
+.container img:hover {
+    transform: scale(1.2); /* Zoom effect */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    header nav {
+        flex-direction: column;
+        gap: 5px; /* Reduced gap for smaller screens */
+    }
+    header nav a {
+        padding: 15px; /* Increase padding for better touch targets */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .title {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
